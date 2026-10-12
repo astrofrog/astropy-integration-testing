@@ -23,4 +23,7 @@ jobs:
       config: packages.yaml
       # libfftw3-dev for packages that build against FFTW, and ffmpeg
       # for tests that write movies (e.g. irispy-lmsal's wobble movie).
-      apt-packages: libfftw3-dev ffmpeg
+      libraries: |
+        apt:
+          - libfftw3-dev
+          - ffmpeg

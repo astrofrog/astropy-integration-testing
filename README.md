@@ -29,7 +29,7 @@ integration-dashboard reusable workflow at `@main`, which:
 1. reads `columns:` from `packages.yaml` and expands it into a job
    matrix, one job per (Python version, variant) column;
 2. in each job, installs the system packages listed in the workflow's
-   `apt-packages` input, builds a shared venv with sunpy plus every
+   `libraries` input, builds a shared venv with sunpy plus every
    package that can be installed alongside it, and runs `pytest --pyargs
    <module>` for each one;
 3. collects the results and publishes the dashboard to `gh-pages`.
@@ -91,7 +91,7 @@ entry takes:
   `-k "not foo"` to skip tests)
 
 If a package needs a system library or tool, add it to the
-`apt-packages` input in `.github/workflows/integration.yml`.
+`libraries` input in `.github/workflows/integration.yml`.
 
 Triggering a run from GitHub
 ----------------------------
